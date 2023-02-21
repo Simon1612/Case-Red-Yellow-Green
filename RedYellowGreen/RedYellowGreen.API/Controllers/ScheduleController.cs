@@ -1,38 +1,36 @@
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using RedYellowGreen.API.Services;
+//using Microsoft.AspNetCore.Authorization;
+//using Microsoft.AspNetCore.Mvc;
 
-namespace RedYellowGreen.API.Controllers;
+//namespace RedYellowGreen.API.Controllers;
 
-[ApiController]
-[Route("[controller]")]
-[Authorize("")]
-public class ScheduleController : ControllerBase
-{
-    private readonly ILogger _logger;
+//[ApiController]
+//[Route("[controller]")]
+//[Authorize("")]
+//public class ScheduleController : ControllerBase
+//{
+    
 
-    public ScheduleController(ILogger logger)
-    {
-        _logger = logger;
-    }
+//    public ScheduleController()
+//    {
+//    }
 
-    [HttpGet]
-    public Schedule Get(string machineId)
-    {
-        
-    }
+//    [HttpGet]
+//    public Schedule.Model Get(string machineId)
+//    {
 
-    [HttpGet]
-    public IEnumerable<Models.Schedule> GetAll()
-    {
+//    }
 
-    }
+//    [HttpGet]
+//    public IEnumerable<Schedule.Model> GetAll()
+//    {
 
-    [HttpPut]
-    public IActionResult Update(string scheduleId)
-    {
+//    }
+
+//    [HttpPut]
+//    public IActionResult Update(string scheduleId)
+//    {
 
 
-        return Ok();
-    }
-}
+//        return Ok();
+//    }
+//}

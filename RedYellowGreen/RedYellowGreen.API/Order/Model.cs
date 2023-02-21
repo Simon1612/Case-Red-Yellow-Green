@@ -1,6 +1,6 @@
-﻿namespace RedYellowGreen.API.Models;
+﻿namespace RedYellowGreen.API.Order;
 
-public class Order
+public record Model
 {
     public Guid OrderId { get; set; }
     public DateTime OrderDate { get; set; }

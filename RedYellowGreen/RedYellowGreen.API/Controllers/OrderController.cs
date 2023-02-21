@@ -1,45 +1,44 @@
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+//using Microsoft.AspNetCore.Authorization;
+//using Microsoft.AspNetCore.Mvc;
 
-namespace RedYellowGreen.API.Controllers;
+//namespace RedYellowGreen.API.Controllers;
 
-[ApiController]
-[Route("[controller]")]
-[Authorize("")]
-public class OrderController : ControllerBase
-{
-    private readonly ILogger _logger;
+//[ApiController]
+//[Route("[controller]")]
+//[Authorize("")]
+//public class OrderController : ControllerBase
+//{
+    
 
-    public OrderController(ILogger logger)
-    {
-        _logger = logger;
-    }
+//    public OrderController()
+//    {
+//    }
 
-    [HttpGet]
-    public Models.Order Get(Guid orderId)
-    {
+//    [HttpGet]
+//    public ActionResult<Order.Model> Get(Guid orderId)
+//    {
 
-    }
+//    }
 
-    [HttpGet("all")]
-    public IEnumerable<Models.Order> GetAll()
-    {
+//    [HttpGet("all")]
+//    public IEnumerable<Order.Model> GetAll()
+//    {
 
-    }
+//    }
 
-    [HttpPost]
-    public IActionResult Post(Models.Order newOrder)
-    {
-
-
-        return Ok();
-    }
-
-    [HttpPut]
-    public IActionResult Update(Models.Order updatedOrder)
-    {
+//    [HttpPost]
+//    public IActionResult Post(Order.Model newOrder)
+//    {
 
 
-        return Ok();
-    }
-}
+//        return Ok();
+//    }
+
+//    [HttpPut]
+//    public IActionResult Update(Order.Model updatedOrder)
+//    {
+
+
+//        return Ok();
+//    }
+//}
