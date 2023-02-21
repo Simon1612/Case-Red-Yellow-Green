@@ -4,8 +4,8 @@ public interface IRepository
 {
     Ordering.Order? Get(Guid id);
     IEnumerable<Ordering.Order> GetAll();
-    bool Update(Ordering.Order state);
-    bool Add(Ordering.Order state);
+    bool Update(Ordering.Order order);
+    bool Add(Ordering.Order order);
 }
 
 public class Repository : IRepository

@@ -2,19 +2,19 @@ namespace RedYellowGreen.API.Scheduling;
 
 public interface IRepository
 {
-    Scheduling.Schedule Get(string machineId);
+    Scheduling.Schedule? Get(string equipmentId);
+    IEnumerable<Scheduling.Schedule> GetAll();
+    bool Update(Scheduling.Schedule schedule);
+    bool Add(Scheduling.Schedule schedule);
 }
 
 public class Repository : IRepository
 {
-    public Repository()
-    {
-    }
+    public Scheduling.Schedule? Get(string equipmentId) => DatabaseMock.GetSchedule(equipmentId);
 
-    public Scheduling.Schedule Get(string machineId)
-    {
-        // Get the current state of specified machine from database
+    public IEnumerable<Scheduling.Schedule> GetAll() => DatabaseMock.GetAllSchedules();
 
-        return new Scheduling.Schedule() { };
-    }
+    public bool Update(Scheduling.Schedule schedule) => DatabaseMock.Update(schedule);
+
+    public bool Add(Scheduling.Schedule schedule) => DatabaseMock.Add(schedule);
 }
