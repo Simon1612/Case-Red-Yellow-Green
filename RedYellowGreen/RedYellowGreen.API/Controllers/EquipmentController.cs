@@ -6,17 +6,17 @@ namespace RedYellowGreen.API.Controllers;
 [Route("[controller]")]
 public class EquipmentController : ControllerBase
 {
-    private readonly Equipment.IService _equipmentService;
+    private readonly Equipment.IService _service;
 
-    public EquipmentController(Equipment.IService equipmentService)
+    public EquipmentController(Equipment.IService service)
     {
-        _equipmentService = equipmentService;
+        _service = service;
     }
 
-    [HttpGet]
+    [HttpGet("state")]
     public ActionResult<Equipment.State> GetState(string equipmentId)
     {
-        var state = _equipmentService.GetState(equipmentId);
+        var state = _service.GetState(equipmentId);
 
         if (state == null)
             return BadRequest($"No Equipment with ID '{equipmentId}' registered.");
@@ -27,25 +27,25 @@ public class EquipmentController : ControllerBase
     [HttpGet("events")]
     public IEnumerable<Equipment.Event> GetEvents(string equipmentId)
     {
-        return _equipmentService.GetEvents(equipmentId);
+        return _service.GetEvents(equipmentId);
     }
 
-    [HttpGet("all")]
+    [HttpGet("state/all")]
     public IEnumerable<Equipment.State> GetAllStates()
     {
-        return _equipmentService.GetAllStates();
+        return _service.GetAllStates();
     }
 
     [HttpGet("events/all")]
     public IEnumerable<Equipment.Event> GetAllEvents()
     {
-        return _equipmentService.GetAllEvents();
+        return _service.GetAllEvents();
     }
 
-    [HttpPut]
+    [HttpPut("state/update")]
     public IActionResult Update(Equipment.State state)
     {
-        var result = _equipmentService.Update(state, "SomeWorkerIdReceivedThroughAuth");
+        var result = _service.Update(state, "SomeWorkerIdReceivedThroughAuth");
 
         if (!result)
             return BadRequest($"No Equipment with ID '{state?.EquipmentId}' registered.");
