@@ -1,7 +1,11 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+builder.Services.AddTransient<RedYellowGreen.API.Equipment.IRepository, RedYellowGreen.API.Equipment.Repository>();
+builder.Services.AddTransient<RedYellowGreen.API.Order.IRepository, RedYellowGreen.API.Order.Repository>();
+builder.Services.AddTransient<RedYellowGreen.API.Schedule.IRepository, RedYellowGreen.API.Schedule.Repository>();
+builder.Services.AddTransient<RedYellowGreen.API.Equipment.IService, RedYellowGreen.API.Equipment.Service>();
+builder.Services.AddTransient<RedYellowGreen.API.Order.IService, RedYellowGreen.API.Order.Service>();
+builder.Services.AddTransient<RedYellowGreen.API.Schedule.IService, RedYellowGreen.API.Schedule.Service>();
 
 // Let's ignore logging for this exercise.
 builder.Services.AddControllers();
