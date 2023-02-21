@@ -4,7 +4,7 @@ public record State
 {
     public string? EquipmentId { get; set; }
     public CurrentState CurrentState { get; set; }
-    public Guid CurrentOrderId { get; set; }
+    public Ordering.Order? CurrentOrder { get; set; }
 }
 
 public enum CurrentState

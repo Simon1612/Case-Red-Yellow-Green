@@ -12,8 +12,8 @@ public interface IService
 
 public class Service : IService
 {
-    private readonly IRepository _repository;
-    public Service(IRepository repository)
+    private readonly Equipment.IRepository _repository;
+    public Service(Equipment.IRepository repository)
     {
         _repository = repository;
     }
@@ -45,7 +45,7 @@ public class Service : IService
         if(!stateResult)
             return false;
 
-        _repository.Add(new Event { State = state, Date = DateTime.UtcNow, ChangedBy = changedBy });
+        _repository.Add(new Equipment.Event { State = state, Date = DateTime.UtcNow, ChangedBy = changedBy });
 
         return stateResult;
     }

@@ -1,8 +1,8 @@
-namespace RedYellowGreen.API.Schedule;
+namespace RedYellowGreen.API.Scheduling;
 
 public interface IRepository
 {
-    Schedule.Model Get(string machineId);
+    Scheduling.Schedule Get(string machineId);
 }
 
 public class Repository : IRepository
@@ -11,10 +11,10 @@ public class Repository : IRepository
     {
     }
 
-    public Schedule.Model Get(string machineId)
+    public Scheduling.Schedule Get(string machineId)
     {
         // Get the current state of specified machine from database
 
-        return new Schedule.Model() { };
+        return new Scheduling.Schedule() { };
     }
 }

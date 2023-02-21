@@ -1,4 +1,4 @@
-namespace RedYellowGreen.API.Schedule;
+namespace RedYellowGreen.API.Scheduling;
 
 public interface IService
 {
